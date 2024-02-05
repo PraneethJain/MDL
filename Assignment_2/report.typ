@@ -43,3 +43,42 @@ The coefficients $(beta)$ can be found simply by extending the single variable c
 $ beta_i = beta_i - L (diff J)/(diff beta_i) $
 $ c = c - L (diff J)/(diff c) $
 We iteratively update all $beta_i$ and $c$ until the cost function converges, and then we get our fitted model.
+
+= Task 2: Numerical on Bias and Variance
+Given
+$ x = [-2, -1, 0, 1, 2, 3] $
+$ y = f(x) =  [5, 0, 1, 4, 11, 22] $
+
+$ f_1(x) = 2x^2 + 3x + 1 $
+$ f_2(x) = x^2 + 3x $
+$ f_3(x) = 2x^2 + 2x + 1 $
+
+We need to find the bias squared, variance and MSE
+
+First, we apply the model the input values
+$ hat(f_1)(x) = [3, 0, 1, 6, 15, 28] $
+$ hat(f_2)(x) = [-2, -2, 0, 4, 10, 18] $
+$ hat(f_3)(x) = [5, 1, 1, 5, 13, 25] $
+To get bias
+$ "Bias" = E_i [hat(f_i)(x)] - f(x) $
+$ "Bias" = 1/3 sum_i hat(f_i)(x) - f(x) $
+$ "Bias" = 1/3 [6, -1, 2, 15, 38, 71]-[5, 0, 1, 4, 11, 22] $
+$ "Bias" = [-3, -0.33, -0.33, 1, 1.67, 1.67] $
+$ "Bias"^2 = [9, 0.11, 0.11, 1, 2.77, 2.77] $
+
+To get variance
+$ "Variance" = E_i [(hat(f_i)(x)- E_i [hat(f_i)(x)])^2] $
+$ "Variance" = E_i [(hat(f_i)(x)- [2, -0.3, 0.67, 5, 12.67, 23.67])^2] $
+$ "Variance" = 1/3 (([3, 0, 1, 6, 15, 28] - [2, -0.3, 0.67, 5, 12.67, 23.67])^2 + \ ([-2, -2, 0, 4, 10, 18] - [2, -0.3, 0.67, 5, 12.67, 23.67])^2 + \ ([9, 0.11, 0.11, 1, 2.77, 2.77] - [2, -0.3, 0.67, 5, 12.67, 23.67])^2) $
+$ "Variance" = [8.67, 1.56, 0.22, 0.67, 4.22, 17.56] $
+
+To get MSE
+$ "MSE" = E_i [(f(x) - hat(f_i)(x))^2] $
+$ "MSE" = 1/3 (([5, 0, 1, 4, 11, 22] - [3, 0, 1, 6, 15, 28])^2 +\ ([5, 0, 1, 4, 11, 22] - [-2, -2, 0, 4, 10, 18])^2 + \ ([5, 0, 1, 4, 11, 22] - [5, 1, 1, 5, 13, 25])^2) $
+$ "MSE" = [17.67, 1.67, 0.33, 1.67, 7, 20.33] $
+
+Note that
+$ "Bias"^2 + "Variance" = [9, 0.11, 0.11, 1, 2.77, 2.77] + [8.67, 1.56, 0.22, 0.67, 4.22, 17.56] $
+$ "Bias"^2 + "Variance" = [17.67, 1.67, 0.33, 1.67, 7, 20.33] $
+$ "Bias"^2 + "Variance" = "MSE" $
+Thus, the formula has been verified.
