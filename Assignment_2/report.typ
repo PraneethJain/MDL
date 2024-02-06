@@ -82,3 +82,25 @@ $ "Bias"^2 + "Variance" = [9, 0.11, 0.11, 1, 2.77, 2.77] + [8.67, 1.56, 0.22, 0.
 $ "Bias"^2 + "Variance" = [17.67, 1.67, 0.33, 1.67, 7, 20.33] $
 $ "Bias"^2 + "Variance" = "MSE" $
 Thus, the formula has been verified.
+\ \ \ \ \
+= Task 3: Calculating Bias and Variance
+#table(
+  columns: (1fr, 1fr, 1fr, 1fr, 1fr),
+  inset: 10pt,
+  align: center,
+  [*Degree*], [*Bias*], [*Bias Square*], [*Variance*], [*MSE*],
+  [1], [0.2365], [1.0075], [0.0389], [1.0464],
+  [2], [0.2292], [0.9486], [0.0493], [0.9979],
+  [3], [-0.0122], [0.0143], [0.0834], [0.0978],
+  [4], [0.0008], [0.0132], [0.13], [0.1432],
+  [5], [0.0063], [0.0122], [0.149], [0.1611],
+  [6], [0.0061], [0.0127], [0.1691], [0.1818],
+  [7], [0.0099], [0.0131], [0.2163], [0.2294],
+  [8], [0.025], [0.0279], [0.2239], [0.2519],
+  [9], [0.0562], [0.1019], [0.2136], [0.3155],
+  [10], [0.0853], [0.2653], [0.2009], [0.4661],
+)
+
+As the degree of the polynomial increases, the complexity of the model increases. Since models with a large number of parameters tend to have higher variance, we would expect the variance to monotonically increase with the degree of the polynomial. This can be emperically verified by observing the trend of variance increasing with degree in the above table.
+
+For smaller degrees, the data is underfit, thus the bias square is high but the variance is low. As complexity increases, the bias square is expected to monotonically decrease with the degree of the polynomial. This is mostly true for the data tabulated above.
