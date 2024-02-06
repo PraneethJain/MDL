@@ -104,3 +104,22 @@ Thus, the formula has been verified.
 As the degree of the polynomial increases, the complexity of the model increases. Since models with a large number of parameters tend to have higher variance, we would expect the variance to monotonically increase with the degree of the polynomial. This can be emperically verified by observing the trend of variance increasing with degree in the above table.
 
 For smaller degrees, the data is underfit, thus the bias square is high but the variance is low. As complexity increases, the bias square is expected to monotonically decrease with the degree of the polynomial. This is mostly true for the data tabulated above.
+
+= Task 4: Calculating Irreducible Error
+#table(
+  columns: (1fr, 1fr),
+  inset: 10pt,
+  align: center,
+  [*Degree*], [*Irreducible Error*],
+  [1], [0],
+  [2], [0],
+  [3], [0],
+  [4], [0],
+  [5], [0],
+  [6], [0],
+  [7], [0],
+  [8], [0],
+  [9], [0],
+)
+
+The irreducible error $ sigma^2 = E_i [(y - hat(f_i)(x))^2] - ("Bias"^2 + "Variance") $ is a property of the data itself, and is independent of the model chosen. This error can not be reduced by creating better models. This error may not always be $0$, but for this dataset, its value is 0, and thus remains constant throughout.
