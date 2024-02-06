@@ -123,3 +123,10 @@ For smaller degrees, the data is underfit, thus the bias square is high but the 
 )
 
 The irreducible error $ sigma^2 = E_i [(y - hat(f_i)(x))^2] - ("Bias"^2 + "Variance") $ is a property of the data itself, and is independent of the model chosen. This error can not be reduced by creating better models. This error may not always be $0$, but for this dataset, its value is 0, and thus remains constant throughout.
+
+= Task 5: Plotting Bias square - Variance Graph
+#image("plot.png")
+
+- The data is best fitted by a polynomial of degree 3, as can be observed from the graph above.
+- For degrees $1, 2$, the model is heavily underfit, thus the bias is extremely high.
+- For degrees $4$ to $10$, the variance is high as the model is overfit.
