@@ -81,8 +81,12 @@ Note that
 $ "Bias"^2 + "Variance" = [9, 0.11, 0.11, 1, 2.77, 2.77] + [8.67, 1.56, 0.22, 0.67, 4.22, 17.56] $
 $ "Bias"^2 + "Variance" = [17.67, 1.67, 0.33, 1.67, 7, 20.33] $
 $ "Bias"^2 + "Variance" = "MSE" $
+
+On considering the averages across all 3 models,
+$ "Bias"^2 =  2.62, "Variance" = 5.48, "MSE" = 8.1 $
+$ "Bias"^2 + "Variance" = "MSE" $
+
 Thus, the formula has been verified.
-\ \ \ \ \
 = Task 3: Calculating Bias and Variance
 #table(
   columns: (1fr, 1fr, 1fr, 1fr, 1fr),
@@ -108,7 +112,7 @@ For smaller degrees, the data is underfit, thus the bias square is high but the 
 = Task 4: Calculating Irreducible Error
 #table(
   columns: (1fr, 1fr),
-  inset: 10pt,
+  inset: 6pt,
   align: center,
   [*Degree*], [*Irreducible Error*],
   [1], [0],
