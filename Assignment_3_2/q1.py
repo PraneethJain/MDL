@@ -55,16 +55,16 @@ def iterate(grid: Grid) -> Grid:
                     max_util = new_max_util
                     match (dx, dy):
                         case (0, 1):
-                            direction="south"
+                            direction="right"
                         case (0, -1):
-                            pass
+                            direction="left"
                         case (1, 0):
-                            pass
+                            direction="down"
                         case (-1, 0):
-                            pass
+                            direction="up"
                         
                 max_util = max(max_util, step_cost + discount_factor * expected_utility)
-            new_grid[x][y] = Cell(max_util, None)
+            new_grid[x][y] = Cell(max_util, direction)
 
     return new_grid
 
@@ -76,5 +76,5 @@ if __name__ == "__main__":
         g = iterate(g)
     for x in g:
         for y in x:
-            print(y.utility, end="\t")
+            print(y.direction, end="\t")
         print()
